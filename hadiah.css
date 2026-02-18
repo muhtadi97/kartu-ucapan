@@ -1,0 +1,140 @@
+/* Tema neon dark */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #000000, #1b1b1b, #333333);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+/* Sapaan bergelombang dan kelap-kelip */
+.greetings, .love {
+    display: flex;
+    gap: 15px; /* Jarak antar huruf */
+    margin: 10px 0;
+}
+
+.greetings span {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(230, 141, 215);
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    animation: flicker 3s infinite ease-in-out;
+}
+
+.love span {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(240, 155, 235);
+    text-shadow: 0 0 10px rgb(253, 144, 217), 0 0 20px rgb(253, 144, 217), 0 0 40px rgb(253, 144, 217);
+    animation: flicker 3s infinite ease-in-out;
+}
+
+
+/* Kata-kata ucapan */
+.description {
+    margin: 20px 0;
+}
+
+.description .wish {
+    font-size: 1.2rem;
+    color: #5dedf7;
+    text-shadow: 0 0 10px #313031, 0 0 20px #313031, 0 0 30px #313031;
+    margin: 10px 0;
+    animation: text-fade 5s infinite;
+}
+
+/* Animasi fade untuk kata-kata */
+@keyframes text-fade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Animasi flicker untuk huruf */
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #00f, 0 0 100px #00f;
+    }
+    50% {
+        opacity: 0.3;
+        text-shadow: 0 0 5px #0ff, 0 0 10px #00f, 0 0 20px #00f;
+    }
+}
+
+/* Penundaan animasi untuk huruf */
+.greetings span:nth-child(1),
+.love span:nth-child(1) { animation-delay: 0s; }
+.greetings span:nth-child(2),
+.love span:nth-child(2) { animation-delay: 0.3s; }
+.greetings span:nth-child(3),
+.love span:nth-child(3) { animation-delay: 0.6s; }
+.greetings span:nth-child(4),
+.love span:nth-child(4) { animation-delay: 0.9s; }
+.greetings span:nth-child(5),
+.love span:nth-child(5) { animation-delay: 1.2s; }
+
+/* Tombol */
+.btn {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f281ca;
+    padding: 15px 30px;
+    background: #161616;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* Tombol hover */
+.btn:hover {
+    background: #13ecf3;
+    box-shadow: 0 0 20px #ff00bf, 0 0 40px #ff00bf, 0 0 60px #ff00bf;
+    transform: scale(1.1);
+}
+
+/* Fireworks */
+#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: url('img/firework.gif') no-repeat center;
+    background-size: cover;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .greetings span {
+        font-size: 2rem;
+    }
+    .love span {
+        font-size: 3.1rem;
+    }
+    .btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}
+
+
